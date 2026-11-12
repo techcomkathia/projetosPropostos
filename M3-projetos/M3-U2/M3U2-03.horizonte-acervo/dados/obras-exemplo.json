@@ -1,0 +1,363 @@
+{
+  "info": {
+    "total": 145,
+    "parameters": {
+      "skip": 0,
+      "limit": 12,
+      "type": "Photograph",
+      "q": "landscape",
+      "has_image": "1",
+      "select": "accession_number,accession_number_sortable,cover_accession_number,department,gallery,collection,classification_type,department",
+      "classification_type": "Photograph",
+      "search": "landscape"
+    }
+  },
+  "data": [
+    {
+      "id": 157013,
+      "title": "Landscape",
+      "creation_date": "1856",
+      "type": "Photograph",
+      "technique": "albumen print from wet collodion negative",
+      "culture": [
+        "England, 19th century"
+      ],
+      "measurements": "Image: 19 x 25 cm (7 1/2 x 9 13/16 in.); Matted: 50.8 x 61 cm (20 x 24 in.)",
+      "description": "In the 1850s London lawyer Henry White was also recognized as one of Britain's most gifted landscape photographers. His work helped to establish the aesthetic standard for 19th-century British landscape photography. This charming image is an example of his best known work—intimate, lyrical landscapes taken in northern Wales. Here White carefully balanced his desire to faithfully record elaborate details with broad atmospheric effects. As with many of his photographs, this print registers a city-dweller's delight in finding himself in natural surroundings.",
+      "url": "https://clevelandart.org/art/1993.162",
+      "creators": [
+        {
+          "id": 1088,
+          "description": "Henry White (British, 1819–1903)",
+          "role": "artist"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/1993.162/1993.162_web.jpg",
+          "width": "1173",
+          "height": "893",
+          "filesize": "880357",
+          "filename": "1993.162_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 157126,
+      "title": "Untitled (Winter Landscape)",
+      "creation_date": "c. 1900",
+      "type": "Photograph",
+      "technique": "platinum print",
+      "culture": [
+        "America"
+      ],
+      "measurements": "Image: 14.9 x 23 cm (5 7/8 x 9 1/16 in.); Matted: 40.6 x 50.8 cm (16 x 20 in.)",
+      "description": "In the decades around the turn of the 20th century, Post frequently exhibited his Pictorial photographs in the United States, Canada, and Europe. This well-regarded amateur photographer was especially known for his winter scenes, often taken in the vicinity of his home in Fryeburg, Maine. Cleverly positioned, the photographer used two mounds of earth in the foreground to frame a complex landscape of open fields populated by stands of trees and a weaving line of fences leading the eye to the distant mountain range. Post hoped his ability to compose and his mastery of powerful visual effects would earn him recognition as a master of landscape photography.",
+      "url": "https://clevelandart.org/art/1993.28",
+      "creators": [
+        {
+          "id": 784,
+          "description": "William B. Post (American, 1857–1925)",
+          "role": "artist"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/1993.28/1993.28_web.jpg",
+          "width": "1263",
+          "height": "815",
+          "filesize": "646625",
+          "filename": "1993.28_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 161277,
+      "title": "Landscape with Seated Figure on Stream Bank",
+      "creation_date": "c. 1856",
+      "type": "Photograph",
+      "technique": "salted paper print from waxed paper negative",
+      "culture": [
+        "France, 19th century"
+      ],
+      "measurements": "Image: 16.5 x 21.5 cm (6 1/2 x 8 7/16 in.); Mounted: 25.1 x 32.5 cm (9 7/8 x 12 13/16 in.); Matted: 40.6 x 50.8 cm (16 x 20 in.)",
+      "description": "Flooded with bright light and enveloped in deep shadows, this romantic landscape is the remarkable achievement of the early French photographer Chauvassaignes, about whom little biographical information is known. His mastery of composition and technique reveals itself in this picturesque composition of water, stream banks, trees, and foliage, evoking a feeling of great tranquility. Inspired by the compositions of paintings and lithographs, Chauvassaignes exploited the inherent characteristics of the paper negative, enabling him to subordinate details while emphasizing the effects of light and shadow. The idyllic view, contemplated by a solitary seated gentleman, recedes into deep space through flickering sunlight and leafy boughs. A photographer with a trained and sophisticated eye, Chauvassaignes conveyed an uncommon intimacy in this forest landscape, a favorite subject of mid-19th-century artists.",
+      "url": "https://clevelandart.org/art/1999.51",
+      "creators": [
+        {
+          "id": 30187,
+          "description": "Frank Chauvassaignes (French)",
+          "role": "artist"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/1999.51/1999.51_web.jpg",
+          "width": "1166",
+          "height": "893",
+          "filesize": "746900",
+          "filename": "1999.51_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 667960,
+      "title": "Untitled (Landscape Scene)",
+      "creation_date": "1878–80",
+      "type": "Photograph",
+      "technique": "albumen print",
+      "culture": [
+        "Ireland"
+      ],
+      "description": "The subject of this album is the Second Anglo-Afghan War, which was fought from 1878 to 1880. John Burke was the first photographer to photograph extensively in Afghanistan and the main photographer covering that conflict. The technology of the day did not permit action shots of battles. As is usual for early conflict photography, the pictures are landscapes of the sites of momentous incidents, views of camps and civil and military infrastructure, and portraits of the soldiers and their leaders.",
+      "url": "https://clevelandart.org/art/2024.6.yy",
+      "creators": [
+        {
+          "id": 667822,
+          "description": "John Burke (Irish, 1845–1915)",
+          "role": "artist"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/2024.6.yy/2024.6.yy_web.jpg",
+          "width": "900",
+          "height": "648",
+          "filesize": "176142",
+          "filename": "2024.6.yy_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 386333,
+      "title": "Untitled (River, Hong Kong or Macau, China)",
+      "creation_date": "1866–73",
+      "type": "Photograph",
+      "technique": "albumen print",
+      "culture": [
+        "England, 19th century"
+      ],
+      "measurements": "Image: 21.9 x 27.9 cm (8 5/8 x 11 in.); Paper: 21.9 x 27.9 cm (8 5/8 x 11 in.); Mounted: 26.8 x 34.1 cm (10 9/16 x 13 7/16 in.)",
+      "description": "A young art form, photography had not yet fully developed its own visual traditions when William Pryor Floyd was working, so he often borrowed compositional formats from classical landscape painting. Here, he instead daringly placed the stream right in the middle of this composition. It wends its way in gentle S curves into the distance, drawing the viewer’s eye up and across the picture plane, until it disappears into distant trees.",
+      "url": "https://clevelandart.org/art/2020.235",
+      "creators": [
+        {
+          "id": 386323,
+          "description": "William Pryor Floyd (British, 1834–c. 1900)",
+          "role": "artist"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/2020.235/2020.235_web.jpg",
+          "width": "900",
+          "height": "712",
+          "filesize": "274249",
+          "filename": "2020.235_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 151365,
+      "title": "Rowing Home the Schoof-Stuff",
+      "creation_date": "1886",
+      "type": "Photograph",
+      "technique": "platinum print",
+      "culture": [
+        "England"
+      ],
+      "measurements": "Image: 13.6 x 27.6 cm (5 3/8 x 10 7/8 in.); Matted: 35.6 x 45.7 cm (14 x 18 in.)",
+      "description": "Reacting against the theatrical, sentimental photogaphs made by his contemporaries, Peter Henry Emerson pursued a direct and more naturalistic form of photography. He discovered his subjects in familiar scenes from everyday life and captured them on film. This image was included among the 40 prints illustrating <em>Life and Landscape on the Norfolk Broads</em>, one of many books Emerson published on the marsh dwellers of East Anglia. In this photograph the word \"schoof\" refers to the sheaf of marsh plants that have been harvested to be dried and stored at home.",
+      "url": "https://clevelandart.org/art/1983.206",
+      "creators": [
+        {
+          "id": 110,
+          "description": "Peter Henry Emerson (British, 1856–1936)",
+          "role": "artist"
+        },
+        {
+          "id": 69167,
+          "description": "Sampson Low, Marston, Seale and Riverton (with T.F. Goodall)",
+          "role": "published by"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/1983.206/1983.206_web.jpg",
+          "width": "1263",
+          "height": "634",
+          "filesize": "491658",
+          "filename": "1983.206_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 149904,
+      "title": "Winter Landscape",
+      "creation_date": "c. 1900",
+      "type": "Photograph",
+      "technique": "platinum print",
+      "culture": [
+        "America"
+      ],
+      "measurements": "Image: 21.2 x 16.3 cm (8 3/8 x 6 7/16 in.); Matted: 45.7 x 35.6 cm (18 x 14 in.)",
+      "description": null,
+      "url": "https://clevelandart.org/art/1980.141",
+      "creators": [
+        {
+          "id": 1085,
+          "description": "Clarence H. White (American, 1871–1925)",
+          "role": "artist"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/1980.141/1980.141_web.jpg",
+          "width": "699",
+          "height": "893",
+          "filesize": "444473",
+          "filename": "1980.141_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 156526,
+      "title": "Switzerland. Grindelwald, Upper Glacier, Source of the Lutschine",
+      "creation_date": "1875–77",
+      "type": "Photograph",
+      "technique": "Carbon print, toned, from wet collodion negative",
+      "culture": [
+        "France, 19th century"
+      ],
+      "measurements": "Image: 38.7 x 48.3 cm (15 1/4 x 19 in.); Paper: 40 x 50.7 cm (15 3/4 x 19 15/16 in.); Matted: 55.9 x 71.1 cm (22 x 28 in.); Framed: 59.1 x 74.3 cm (23 1/4 x 29 1/4 in.)",
+      "description": "Braun's photographs often bore a stylistic resemblance to realist painting in France. Photography was an important factor in the evolution of realism, a style that was then gaining popularity. With its forthright depiction of natural forces, this photograph of a river springing from a glacier clearly recalls landscape paintings by Gustave Courbet (1819–1877). Courbet's numerous river scenes were contemporary with Braun's work and were part of the aesthetic context of the time.",
+      "url": "https://clevelandart.org/art/1992.237",
+      "creators": [
+        {
+          "id": 274,
+          "description": "Adolphe Braun (French, 1812–1877)",
+          "role": "artist"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/1992.237/1992.237_web.jpg",
+          "width": "1111",
+          "height": "893",
+          "filesize": "728955",
+          "filename": "1992.237_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 157321,
+      "title": "Untitled (Landscape near Watsonville, California)",
+      "creation_date": "c. 1879",
+      "type": "Photograph",
+      "technique": "albumen print from wet collodion negative",
+      "culture": [
+        "America"
+      ],
+      "measurements": "Image: 13.7 x 23.3 cm (5 3/8 x 9 3/16 in.); Matted: 40.6 x 50.8 cm (16 x 20 in.)",
+      "description": null,
+      "url": "https://clevelandart.org/art/1994.187",
+      "creators": [
+        {
+          "id": 716,
+          "description": "Eadweard J. Muybridge (American, 1830–1904)",
+          "role": "artist"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/1994.187/1994.187_web.jpg",
+          "width": "1263",
+          "height": "744",
+          "filesize": "609908",
+          "filename": "1994.187_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 160071,
+      "title": "River Landscape, Scotland",
+      "creation_date": "c. 1858",
+      "type": "Photograph",
+      "technique": "albumen print from wax paper negative",
+      "culture": [
+        "England, 19th century"
+      ],
+      "measurements": "Image: 25.1 x 31.6 cm (9 7/8 x 12 7/16 in.); Matted: 50.8 x 61 cm (20 x 24 in.)",
+      "description": null,
+      "url": "https://clevelandart.org/art/1997.44.a",
+      "creators": [
+        {
+          "id": 6550,
+          "description": "Captain Horatio Ross (British, 1801–1886)",
+          "role": "artist"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/1997.44.a/1997.44.a_web.jpg",
+          "width": "1120",
+          "height": "893",
+          "filesize": "755036",
+          "filename": "1997.44.a_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 160072,
+      "title": "River Landscape, Scotland",
+      "creation_date": "c. 1858",
+      "type": "Photograph",
+      "technique": "waxed paper negative",
+      "culture": [
+        "England, 19th century"
+      ],
+      "measurements": "Image: 25.1 x 31.6 cm (9 7/8 x 12 7/16 in.)",
+      "description": null,
+      "url": "https://clevelandart.org/art/1997.44.b",
+      "creators": [
+        {
+          "id": 6550,
+          "description": "Captain Horatio Ross (British, 1801–1886)",
+          "role": "artist"
+        }
+      ],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/1997.44.b/1997.44.b_web.jpg",
+          "width": "1175",
+          "height": "893",
+          "filesize": "880136",
+          "filename": "1997.44.b_web.jpg"
+        }
+      }
+    },
+    {
+      "id": 155374,
+      "title": "Untitled (Landscape)",
+      "creation_date": "early 1860s",
+      "type": "Photograph",
+      "technique": "albumen print from wet collodion negative",
+      "culture": [
+        "France(?)"
+      ],
+      "measurements": "Image: 18.7 x 24.2 cm (7 3/8 x 9 1/2 in.); Matted: 35.6 x 45.7 cm (14 x 18 in.)",
+      "description": null,
+      "url": "https://clevelandart.org/art/1990.122",
+      "creators": [],
+      "images": {
+        "web": {
+          "url": "https://openaccess-cdn.clevelandart.org/1990.122/1990.122_web.jpg",
+          "width": "1144",
+          "height": "893",
+          "filesize": "932077",
+          "filename": "1990.122_web.jpg"
+        }
+      }
+    }
+  ]
+}
