@@ -1,0 +1,155 @@
+<!doctype html>
+<!-- LEGADO: fora do escopo da M3-U2 (referência para a M3-U3). Não aparece na navegação e não é avaliado. -->
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f6f1" />
+    <title>Livro — Nexo Literário</title>
+    <meta
+      name="description"
+      content="Detalhes do livro na programação do Nexo Literário."
+    />
+    <meta property="og:title" content="Livro — Nexo Literário" />
+    <meta
+      property="og:description"
+      content="Detalhes do livro na programação do Nexo Literário."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="cabecalho__interno">
+        <a href="index.html" class="cabecalho__marca">Nexo Literário</a>
+        <nav class="cabecalho__navegacao">
+          <a href="index.html" class="cabecalho__link">Início</a>
+          <a href="clube.html" class="cabecalho__link">O Clube</a>
+          <a href="assinar.html" class="cabecalho__assinar">Assinar</a>
+        </nav>
+        <button
+          class="cabecalho__botao-menu"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-celular"
+        >
+          <!-- ícone Menu (lucide) -->
+          <svg class="icone-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <!-- ícone X (lucide) -->
+          <svg class="icone-fechar" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav id="menu-celular" class="cabecalho__menu-celular" hidden>
+        <a href="index.html">Início</a>
+        <a href="clube.html">O Clube</a>
+        <a href="assinar.html" class="cabecalho__assinar-celular">Assinar</a>
+      </nav>
+    </header>
+
+    <main class="conteudo-principal">
+      <div id="pagina-livro" class="pagina-livro conteiner">
+        <a href="index.html#leituras" class="pagina-livro__voltar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
+          Voltar à programação
+        </a>
+        <!-- Página única de detalhes: o livro vem do ?livro= do endereço
+             (livro.html?livro=capitaes-da-areia). js/livro.js busca o livro
+             na API e preenche os campos abaixo. -->
+        <p id="livro-carregando" class="pagina-livro__secao texto-suave" role="status">
+          Carregando o livro…
+        </p>
+
+        <div id="livro-erro" class="pagina-livro__secao" role="alert" hidden>
+          <h2 id="livro-erro-titulo"></h2>
+          <p id="livro-erro-mensagem" class="texto-suave"></p>
+          <p>
+            <button id="livro-tentar-de-novo" type="button" class="botao botao--primario">
+              Tentar de novo
+            </button>
+          </p>
+        </div>
+
+        <div id="livro-conteudo" class="pagina-livro__grade" hidden>
+          <div>
+            <div id="livro-capa" class="capa pagina-livro__capa"></div>
+            <dl class="pagina-livro__ficha">
+              <div>
+                <dt class="sobretitulo texto-suave">Páginas</dt>
+                <dd id="livro-paginas"></dd>
+              </div>
+              <div>
+                <dt class="sobretitulo texto-suave">Ano</dt>
+                <dd id="livro-ano"></dd>
+              </div>
+              <div>
+                <dt class="sobretitulo texto-suave">Idioma</dt>
+                <dd id="livro-idioma"></dd>
+              </div>
+              <div>
+                <dt class="sobretitulo texto-suave">Avaliação</dt>
+                <dd id="livro-avaliacao"></dd>
+              </div>
+            </dl>
+          </div>
+          <div>
+            <p id="livro-mes" class="sobretitulo"></p>
+            <h1 id="livro-titulo" class="pagina-livro__titulo"></h1>
+            <p id="livro-autor" class="pagina-livro__autor"></p>
+            <p id="livro-categoria" class="pagina-livro__categoria"></p>
+            <section class="pagina-livro__secao">
+              <h2>Sinopse</h2>
+              <p id="livro-sinopse" class="texto-suave"></p>
+            </section>
+            <section class="pagina-livro__secao">
+              <h2>Nota editorial</h2>
+              <p id="livro-nota-editorial" class="texto-suave"></p>
+            </section>
+            <section class="pagina-livro__secao">
+              <h2>Sobre o autor</h2>
+              <p id="livro-sobre-autor" class="texto-suave"></p>
+            </section>
+          </div>
+        </div>
+        <!-- Anterior e próximo: criados por js/livro.js -->
+        <nav id="livro-navegacao" class="pagina-livro__navegacao" aria-label="Outros livros" hidden></nav>
+      </div>
+    </main>
+
+    <footer class="rodape">
+      <div class="rodape__interno">
+        <div>
+          <span class="rodape__marca">Nexo Literário</span>
+          <p class="rodape__slogan">Onde grandes histórias nos conectam.</p>
+        </div>
+        <nav class="rodape__navegacao">
+          <a href="index.html">Início</a>
+          <a href="clube.html">O Clube</a>
+          <a href="assinar.html">Assinar</a>
+        </nav>
+      </div>
+      <div class="rodape__direitos">
+        Nexo Literário · Curadoria editorial independente · © 2026
+      </div>
+    </footer>
+
+    <script src="js/legado/livros.js"></script>
+    <script src="js/legado/comum.js"></script>
+    <script src="js/legado/livro.js"></script>
+  </body>
+</html>
