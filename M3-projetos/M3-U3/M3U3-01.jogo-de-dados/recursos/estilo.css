@@ -1,0 +1,401 @@
+/* ==========================================================================
+   JOGO DE DADOS · estilo pronto (visual 8 bits, de console dos anos 80)
+
+   Você não precisa escrever CSS neste projeto. Monte o JSX com as classes
+   de docs/02-componentes.md e o visual aparece sozinho.
+
+   Não edite este arquivo. Para mudar cores, crie outro arquivo, importe
+   DEPOIS deste e sobrescreva só as variáveis da seção 1.
+
+   Sumário
+     0. Fontes
+     1. Variáveis
+     2. Base e tela de TV
+     3. Cabeçalho
+     4. Painel e dados
+     5. Placar (soma)
+     6. Botão
+     7. Contador de rolagens
+     8. Desafio extra: trinca
+     9. Animação e movimento reduzido
+   ========================================================================== */
+
+
+/* 0. FONTES --------------------------------------------------------------- */
+/* Press Start 2P: letra de pixel dos jogos antigos. VT323: letra de terminal. */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+
+/* 1. VARIÁVEIS ------------------------------------------------------------ */
+:root {
+  /* tela */
+  --cor-fundo: #160c2b;
+  --cor-fundo-claro: #2a1650;
+  --cor-painel: #07050d;
+  --cor-preto: #000000;
+
+  /* paleta de 8 bits */
+  --cor-laranja: #ff7a1a;
+  --cor-amarelo: #ffd23f;
+  --cor-rosa: #ff3f9e;
+  --cor-ciano: #41d9ff;
+  --cor-verde: #4dff7c;
+  --cor-texto: #f4f0ff;
+
+  /* dado */
+  --cor-dado: #f7f3e8;
+  --cor-dado-sombra: #c9c1ad;
+  --cor-ponto: #000000;
+  --cor-ponto-um: #e8202a;
+
+  --fonte-pixel: "Press Start 2P", "Courier New", monospace;
+  --fonte-terminal: "VT323", "Courier New", monospace;
+
+  /* "um pixel" do desenho: bordas e sombras são múltiplos dele */
+  --px: 4px;
+  --tamanho-dado: 7rem;
+}
+
+@media (max-width: 560px) {
+  :root {
+    --px: 3px;
+    --tamanho-dado: 4.75rem;
+  }
+}
+
+
+/* 2. BASE E TELA DE TV ---------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--cor-texto);
+  font-family: var(--fonte-terminal);
+  font-size: 1.35rem;
+  line-height: 1.3;
+  background:
+    radial-gradient(ellipse at 50% 40%, var(--cor-fundo-claro) 0%, var(--cor-fundo) 65%, #080414 100%);
+  background-attachment: fixed;
+}
+
+/* Linhas de varredura e cantos escuros de uma TV de tubo, por cima de tudo.
+   pointer-events: none deixa o clique passar para o botão. */
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  content: "";
+  background:
+    repeating-linear-gradient(0deg, rgb(0 0 0 / 22%) 0 2px, transparent 2px 4px),
+    radial-gradient(ellipse at center, transparent 60%, rgb(0 0 0 / 55%) 100%);
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+.mesa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.25rem;
+  width: min(100% - 2rem, 46rem);
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-block: 3.5rem 4rem;
+  text-align: center;
+}
+
+
+/* 3. CABEÇALHO ------------------------------------------------------------ */
+.mesa__cabecalho {
+  display: grid;
+  gap: 1.1rem;
+}
+
+/* O título é pintado com faixas horizontais de cor, como nas caixas de
+   cartucho dos anos 80, e tem uma sombra dura, sem desfoque. */
+.mesa__titulo {
+  font-family: var(--fonte-pixel);
+  font-size: clamp(1.4rem, 6.3vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--cor-amarelo);
+  background: linear-gradient(
+    180deg,
+    var(--cor-amarelo) 0 38%,
+    var(--cor-laranja) 38% 62%,
+    var(--cor-rosa) 62% 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(calc(var(--px) * 1.5) calc(var(--px) * 1.5) 0 var(--cor-preto));
+}
+
+.mesa__subtitulo {
+  color: var(--cor-ciano);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+}
+
+
+/* 4. PAINEL E DADOS ------------------------------------------------------- */
+/* O painel: preto e quadriculado, com uma moldura de pixel em camadas
+   (branco, preto, rosa, preto), igual dos quatro lados. */
+.dados {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.9rem, 4.5vw, 2rem);
+  padding: clamp(1.4rem, 5vw, 2.25rem) clamp(1.1rem, 5vw, 2.5rem);
+  border: var(--px) solid var(--cor-texto);
+  background:
+    linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px) 0 0 / 16px 16px,
+    var(--cor-painel);
+  box-shadow:
+    0 0 0 var(--px) var(--cor-preto),
+    0 0 0 calc(var(--px) * 2) var(--cor-rosa),
+    0 0 0 calc(var(--px) * 3) var(--cor-preto);
+}
+
+/* Um dado: uma grade 3 × 3. Cada ponto ocupa uma das nove casas:
+     a b c
+     d e f
+     g h i                                                                  */
+.dado {
+  display: grid;
+  grid-template-areas:
+    "a b c"
+    "d e f"
+    "g h i";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: var(--tamanho-dado);
+  aspect-ratio: 1;
+  padding: calc(var(--tamanho-dado) * 0.13);
+  border: var(--px) solid var(--cor-preto);
+  background: var(--cor-dado);
+  /* sombreado em degrau por dentro + sombra dura por fora */
+  box-shadow:
+    inset calc(var(--px) * -2) calc(var(--px) * -2) 0 var(--cor-dado-sombra),
+    inset var(--px) var(--px) 0 #ffffff,
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--cor-preto);
+  animation: cair 360ms steps(4, end) both;
+}
+
+.dado:nth-child(2) { animation-delay: 90ms; }
+.dado:nth-child(3) { animation-delay: 180ms; }
+.dado:nth-child(4) { animation-delay: 270ms; }
+.dado:nth-child(5) { animation-delay: 360ms; }
+
+/* O ponto: um quadrado, como um pixel grande. */
+.dado__ponto {
+  width: 62%;
+  aspect-ratio: 1;
+  place-self: center;
+  background: var(--cor-ponto);
+}
+
+/* O 1 é vermelho e maior. */
+.dado--1 .dado__ponto {
+  width: 80%;
+  background: var(--cor-ponto-um);
+  box-shadow: inset calc(var(--px) * -1) calc(var(--px) * -1) 0 rgb(0 0 0 / 35%);
+}
+
+/* Onde fica cada ponto, conforme a face (dado--1 a dado--6).
+   O React só precisa colocar a classe certa e o número certo de pontos. */
+.dado--1 .dado__ponto:nth-child(1) { grid-area: e; }
+
+.dado--2 .dado__ponto:nth-child(1) { grid-area: a; }
+.dado--2 .dado__ponto:nth-child(2) { grid-area: i; }
+
+.dado--3 .dado__ponto:nth-child(1) { grid-area: a; }
+.dado--3 .dado__ponto:nth-child(2) { grid-area: e; }
+.dado--3 .dado__ponto:nth-child(3) { grid-area: i; }
+
+.dado--4 .dado__ponto:nth-child(1) { grid-area: a; }
+.dado--4 .dado__ponto:nth-child(2) { grid-area: c; }
+.dado--4 .dado__ponto:nth-child(3) { grid-area: g; }
+.dado--4 .dado__ponto:nth-child(4) { grid-area: i; }
+
+.dado--5 .dado__ponto:nth-child(1) { grid-area: a; }
+.dado--5 .dado__ponto:nth-child(2) { grid-area: c; }
+.dado--5 .dado__ponto:nth-child(3) { grid-area: e; }
+.dado--5 .dado__ponto:nth-child(4) { grid-area: g; }
+.dado--5 .dado__ponto:nth-child(5) { grid-area: i; }
+
+.dado--6 .dado__ponto:nth-child(1) { grid-area: a; }
+.dado--6 .dado__ponto:nth-child(2) { grid-area: c; }
+.dado--6 .dado__ponto:nth-child(3) { grid-area: d; }
+.dado--6 .dado__ponto:nth-child(4) { grid-area: f; }
+.dado--6 .dado__ponto:nth-child(5) { grid-area: g; }
+.dado--6 .dado__ponto:nth-child(6) { grid-area: i; }
+
+
+/* 5. PLACAR (SOMA) -------------------------------------------------------- */
+.soma {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 1rem;
+  min-height: 8.5rem;
+}
+
+.soma__rotulo {
+  color: var(--cor-ciano);
+  font-family: var(--fonte-pixel);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.soma__valor {
+  color: var(--cor-amarelo);
+  font-family: var(--fonte-pixel);
+  font-size: clamp(2.75rem, 12vw, 4.25rem);
+  line-height: 1;
+  text-shadow:
+    var(--px) var(--px) 0 var(--cor-rosa),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--cor-preto);
+  animation: aparecer 240ms steps(3, end) both;
+}
+
+/* A dica termina com um cursor piscando, como num terminal. */
+.soma__dica {
+  color: var(--cor-verde);
+  font-size: 1.6rem;
+}
+
+.soma__dica::after {
+  content: "_";
+  animation: piscar 1s steps(1, end) infinite;
+}
+
+
+/* 6. BOTÃO ---------------------------------------------------------------- */
+/* Botão de pixel: moldura preta e sombra dura que some quando ele afunda. */
+.botao-rolar {
+  padding: 1.1rem 1.6rem;
+  border: var(--px) solid var(--cor-preto);
+  border-radius: 0;
+  background: var(--cor-laranja);
+  color: var(--cor-preto);
+  font-family: var(--fonte-pixel);
+  font-size: clamp(0.75rem, 2.6vw, 0.95rem);
+  line-height: 1.4;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    inset calc(var(--px) * -1) calc(var(--px) * -1) 0 #c4500a,
+    inset var(--px) var(--px) 0 #ffb070,
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--cor-preto);
+}
+
+.botao-rolar:hover {
+  background: var(--cor-amarelo);
+  box-shadow:
+    inset calc(var(--px) * -1) calc(var(--px) * -1) 0 #d9a400,
+    inset var(--px) var(--px) 0 #fff1a8,
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--cor-preto);
+}
+
+.botao-rolar:active {
+  transform: translate(calc(var(--px) * 2), calc(var(--px) * 2));
+  box-shadow:
+    inset calc(var(--px) * -1) calc(var(--px) * -1) 0 #d9a400,
+    inset var(--px) var(--px) 0 #fff1a8;
+}
+
+.botao-rolar:focus-visible {
+  outline: var(--px) dashed var(--cor-ciano);
+  outline-offset: calc(var(--px) * 2);
+}
+
+
+/* 7. CONTADOR DE ROLAGENS ------------------------------------------------- */
+.rolagens {
+  color: var(--cor-texto);
+  font-size: 1.5rem;
+  opacity: 0.85;
+}
+
+.rolagens::before {
+  content: "> ";
+  color: var(--cor-rosa);
+}
+
+
+/* 8. DESAFIO EXTRA: TRINCA ------------------------------------------------ */
+.trinca {
+  padding: 0.7rem 1rem;
+  border: var(--px) solid var(--cor-preto);
+  background: var(--cor-rosa);
+  color: var(--cor-preto);
+  font-family: var(--fonte-pixel);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  box-shadow: calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--cor-preto);
+  animation: piscar-fundo 0.5s steps(1, end) infinite;
+}
+
+
+/* 9. ANIMAÇÃO E MOVIMENTO REDUZIDO ---------------------------------------- */
+/* As animações andam em degraus (steps), sem suavizar: é o movimento
+   "travado" dos consoles antigos. O dado cai uma vez, quando é criado
+   (veja o desafio "Os dados caem a cada rolagem" no README). */
+@keyframes cair {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--px) * -12));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes piscar {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes piscar-fundo {
+  50% {
+    background: var(--cor-amarelo);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dado,
+  .soma__valor,
+  .soma__dica::after,
+  .trinca {
+    animation: none;
+  }
+
+  .botao-rolar:active {
+    transform: none;
+  }
+}

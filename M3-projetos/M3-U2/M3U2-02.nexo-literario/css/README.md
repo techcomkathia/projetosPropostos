@@ -2,7 +2,7 @@
 
 O `style.css` já está pronto e ligado à Home e à página Planos. **Não edite
 este arquivo.** O seu JavaScript cria os elementos com as classes abaixo e liga
-e desliga os estados. O CSS não entra na avaliação.
+e desliga os estados.
 
 Os modelos completos de HTML de cada componente estão em
 `docs/03-componentes.md`.

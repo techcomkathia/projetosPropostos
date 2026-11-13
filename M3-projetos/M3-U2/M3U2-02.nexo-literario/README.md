@@ -122,7 +122,10 @@ e os dados já trazem o link de cada uma.
 
 ## Regras
 
-1. **JavaScript puro.** Nenhuma biblioteca nem framework.
+1. **JavaScript puro.** O projeto existe para você praticar o DOM. Uma
+   biblioteca ou framework de interface (jQuery, React, uma biblioteca de
+   carrossel) faria esse trabalho por você, por isso deixe-os de fora daqui. O
+   Nexo Literário volta na unidade de React.
 2. **Não edite o `index.html`, o `planos.html` nem o `style.css`.** Toda
    mudança na página vem do JavaScript.
 3. **Os dados vêm de `LIVROS` e `PLANOS`.** Não copie as listas para dentro dos
@@ -136,30 +139,43 @@ e os dados já trazem o link de cada uma.
 6. **Sem `alert()`, `confirm()` ou `prompt()`.** Toda mensagem aparece na
    própria página.
 7. Você pode usar IA como tutora, com o prompt da unidade, para tirar dúvidas e
-   revisar o seu código. Não pode pedir para ela fazer o projeto. Na
-   apresentação, você vai explicar qualquer trecho que for apontado.
+   revisar o seu código. Não peça para ela fazer o projeto: você precisa
+   entender e saber explicar cada trecho do que entregar.
 
 ## O que você vai desenvolver
 
-**DOM**
+Ao concluir este projeto você terá praticado:
+
+**DOM: manipulação de elementos (selecionar, criar e adicionar)**
 - Selecionar elementos e criar elementos com `createElement`
 - Preencher texto com `textContent` e atributos com `src`, `alt`, `setAttribute`
 - Mostrar e esconder com `hidden`
+- Funções-componente: recebem um objeto e devolvem um elemento pronto
 
-**Arrays e objetos**
-- Ler propriedades de objetos e tratar as que faltam
+**DOM: eventos**
+- `click` nas setas, nos pontos e no menu
+- O índice do slide visível guardado em uma variável
+- Trocar classes e atributos para mostrar o slide certo
+
+**Arrays e funções de arrays (`map`, `filter`, `forEach`)**
 - `sort` (numa cópia), `filter`, `map` e `forEach` para ordenar, agrupar e
   desenhar listas
 - Um mesmo conjunto de dados desenhado de duas formas (carrossel e linha do tempo)
 
-**Funções-componente**
-- Funções que recebem um objeto e devolvem um elemento pronto
-- Funções que recebem a lista inteira e montam a página
+**Função anônima, callback e arrow functions**
+- A função de comparação do `sort` e as funções do `filter` e do `map`
+- Arrow functions curtas, com retorno implícito
 
-**Eventos e estado**
-- `click` nas setas, nos pontos e no menu
-- O índice do slide visível guardado em uma variável
-- Trocar classes e atributos para mostrar o slide certo
+**Desestruturação de objetos e arrays**
+- `const { titulo, autor, mes } = livro` dentro das funções-componente
+- Desestruturar direto no parâmetro: `function criarCartaoDoPlano({ nome, meses })`
+
+**Parâmetros rest e spread (`...`)**
+- **Spread** espalha uma lista: `[...LIVROS]` cria uma cópia para ordenar sem
+  mexer no original
+- **Rest** junta vários argumentos em uma lista:
+  `criarElemento("p", "classe", filho1, filho2)` recebe os filhos em
+  `...filhos`
 
 **Formatação**
 - Mês por extenso com `Intl.DateTimeFormat`
@@ -167,32 +183,58 @@ e os dados já trazem o link de cada uma.
 
 ---
 
-## Roteiro de estudo
+## Roteiro sugerido
 
-Siga as etapas na ordem. Faça um commit ao fim de cada uma.
+As etapas estão na ordem que facilita a construção do projeto, não na ordem
+das aulas. Cada uma mostra os **assuntos** que pratica: se algum ainda não foi
+visto em aula, use as fontes de consulta do fim deste arquivo. Faça um commit
+ao fim de cada etapa.
 
-### Etapa 1 · Ponto de partida e menu
+### Etapa 1 · Ponto de partida, menu e `criarElemento`
+
+*Assuntos: DOM: introdução e manipulação de elementos · DOM: eventos · parâmetros rest*
 
 Crie `js/comum.js`, `js/inicio.js` e `js/planos.js`. Em cada script de página,
 faça um `console.log(LIVROS)` ou `console.log(PLANOS)` para confirmar que os
 dados chegam. Em `comum.js`, faça o menu do celular abrir e fechar, trocando o
 `hidden` do `#menu-celular`, o `aria-expanded` do botão e o ícone (menu ou X).
 
-`querySelector` · `addEventListener` · `setAttribute` · `hidden`
+Ainda em `comum.js`, escreva uma função de apoio que você vai usar o projeto
+inteiro:
+
+```js
+criarElemento("p", "linha-do-tempo__autor", "Socorro Acioli");
+criarElemento("div", "cartao", imagem, titulo, autor);
+```
+
+Ela recebe a tag, a classe e **quantos filhos você quiser** (texto ou
+elementos), cria o elemento, coloca a classe e adiciona os filhos. Para receber
+"quantos quiser", use um **parâmetro rest**: `function criarElemento(tag,
+classe, ...filhos)`. Dentro da função, `filhos` é uma lista comum. Teste no
+console antes de seguir.
+
+`querySelector` · `addEventListener` · `setAttribute` · `hidden` · `...filhos` · `append`
 
 ### Etapa 2 · A linha do tempo
 
+*Assuntos: Arrays · arrow functions · spread · Desestruturação*
+
 Comece pela linha do tempo, que é uma lista simples. Ordene uma **cópia** de
-`LIVROS` pelo `mes` e escreva `criarItemDaLinhaDoTempo(livro)`, que **recebe um
-livro e devolve um `<li>`** (modelo em `docs/03-componentes.md`). Coloque um
-item para cada livro em `#linha-do-tempo` e tire o `hidden` da seção.
+`LIVROS` pelo `mes` (o spread `[...LIVROS]` faz a cópia; sem ela, o `sort`
+bagunça a lista original) e escreva `criarItemDaLinhaDoTempo(livro)`, que
+**recebe um livro e devolve um `<li>`** (modelo em `docs/03-componentes.md`).
+Dentro dela, desestruture o livro para pegar só os campos que vai usar.
+Coloque um item para cada livro em `#linha-do-tempo` e tire o `hidden` da
+seção.
 
 Escreva também `formatarMes(mes)` (`docs/02-dados-e-calculos.md`) e uma função
 para a capa, que devolve a `<img>` ou o marcador "Capa indisponível".
 
-`[...lista].sort` · `createElement` · `textContent` · `append` · `Intl.DateTimeFormat`
+`[...lista].sort((a, b) => ...)` · `const { ... } = livro` · `createElement` · `textContent` · `Intl.DateTimeFormat`
 
 ### Etapa 3 · O carrossel
+
+*Assuntos: filter e map · callback · DOM: eventos*
 
 Agrupe os livros por trimestre (`filter` com `Math.floor((mes - 1) / 3)`).
 Para cada trimestre, monte um slide com o rótulo e a grade de cartões
@@ -207,15 +249,19 @@ use o resto da divisão: `(indice + total) % total`.
 
 ### Etapa 4 · Os planos
 
+*Assuntos: Desestruturação no parâmetro · map · DOM: manipulação de elementos*
+
 Em `planos.js`, faça as contas em centavos, como mostra
 `docs/02-dados-e-calculos.md`, e confira com a tabela de valores esperados.
 Depois, escreva `criarCartaoDoPlano(plano)` seguindo o modelo de
-`docs/03-componentes.md`. O selo "Mais escolhido" só aparece quando `destaque`
-for `true`.
+`docs/03-componentes.md`, desestruturando o plano direto no parâmetro. O selo
+"Mais escolhido" só aparece quando `destaque` for `true`.
 
-`Math.round` · `toLocaleString` · `createElement` · `classList.add`
+`Math.round` · `toLocaleString` · `function f({ nome, meses })` · `createElement` · `classList.add`
 
 ### Etapa 5 · Casos difíceis e acabamento
+
+*Assuntos: revisão de todos*
 
 Faça os testes da seção "Testar os casos difíceis" de
 `docs/04-guia-dos-dados.md`: lista vazia, livro sem capa, campos ausentes e
@@ -226,9 +272,10 @@ celular. Passe pela lista de entrega e publique no GitHub Pages.
 
 ---
 
-## Desafios extras (opcionais)
+## Evolução do projeto (opcional)
 
-Só depois que tudo da lista de entrega estiver funcionando.
+Depois que tudo da lista de entrega estiver funcionando, você pode continuar o
+projeto. Nada aqui é obrigatório.
 
 - **Teclado no carrossel**: as setas ← e → do teclado trocam o slide quando o
   foco estiver nele.
@@ -251,21 +298,10 @@ Só depois que tudo da lista de entrega estiver funcionando.
 - [ ] Nenhum `undefined` ou `null` aparece na tela, nem em livro sem capa ou sinopse
 - [ ] O menu abre e fecha no celular
 - [ ] Nenhuma lista copiada no código, nenhum `innerHTML` com dados e nenhum `.style` no JS
+- [ ] O `sort` ordena uma cópia feita com spread, as funções-componente desestruturam o objeto e o `criarElemento` usa um parâmetro rest
 - [ ] As páginas ficam parecidas com as referências em tela larga e no celular
 - [ ] Nenhum erro vermelho no console
 - [ ] O site está publicado no GitHub Pages
-
-## Critérios de avaliação
-
-| Critério | Peso |
-| --- | --- |
-| Carrossel: agrupamento por trimestre, navegação e acessibilidade | 30% |
-| Linha do tempo e cartões de livro, com dados que faltam tratados | 25% |
-| Planos: cálculos em centavos, formatação e destaque | 20% |
-| Lista vazia, menu e fidelidade às referências | 10% |
-| Organização: funções-componente, nomes claros, sem repetição | 15% |
-
----
 
 ## Como fazer o fork
 
@@ -290,11 +326,24 @@ git push
 
 **4. Publique.** No seu repositório, abra *Settings › Pages*, escolha a branch
 `main` e a pasta `/ (root)` e salve. Em um ou dois minutos, o link aparece no
-topo da mesma tela.
+topo da mesma tela. Coloque esse link na descrição do repositório (a
+engrenagem ao lado de *About*). O passo a passo, com imagens, está na
+[documentação do GitHub Pages](https://docs.github.com/pt/pages/getting-started-with-github-pages/creating-a-github-pages-site),
+em português.
 
 ---
 
-**Fontes de consulta:** [MDN: manipulando documentos](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents),
-[MDN: Array](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array),
-[MDN: Intl.DateTimeFormat](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat),
-[MDN: Number.prototype.toLocaleString](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString).
+## Fontes de consulta
+
+Em português, a não ser quando indicado.
+
+- [GitHub: criar fork de um repositório](https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+- [MDN: manipulando documentos](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
+- [MDN: Array](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array) e
+  [Array.prototype.map](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [MDN: Arrow functions](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- [MDN: Atribuição via desestruturação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [MDN: Sintaxe de espalhamento (spread)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_syntax) e
+  [Parâmetros rest](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+- [MDN: Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) (em inglês)
+- [MDN: Number.prototype.toLocaleString](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)

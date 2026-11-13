@@ -5,12 +5,12 @@ estética das três páginas do Módulo 2 (Artesano, Raiz & Cia e Horizonte) em
 forma de **classes** e **variáveis**.
 
 No Módulo 2 você escreveu o CSS. Aqui ele já vem pronto: você monta o HTML (ou
-o JSX) com as classes desta página e gasta o seu tempo no JavaScript. O CSS não
-entra na avaliação de nenhum projeto deste módulo.
+o JSX) com as classes desta página e gasta o seu tempo no JavaScript.
 
 Neste projeto, o arquivo já está ligado no `index.html` e o tema Horizonte já
-está ativo. A professora tem uma **vitrine** com todos os componentes
-funcionando nos três temas: peça o link se quiser ver.
+está ativo. Abra `vitrine/index.html` (na raiz do projeto) no navegador para ver
+todos os componentes funcionando. O seletor no canto da tela troca entre os
+três temas.
 
 ---
 
@@ -128,7 +128,7 @@ No React é igual, só que declarado no JSX:
 ## 5. Componentes
 
 Abaixo, a marcação mínima de cada componente. Para ver todos funcionando, use
-a `vitrine.html`.
+a vitrine (`vitrine/index.html`).
 
 ### Layout
 

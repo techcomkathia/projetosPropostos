@@ -14,7 +14,7 @@ As outras referências estão em `referencias/`: a conversão a partir de gramas
 (`02-de-gramas.png`), o aviso de erro (`03-erro.png`), a página no celular
 (`04-celular.png`) e no modo escuro do sistema (`05-escuro.png`).
 
-As referências mostram também os **desafios extras** (as xícaras desenhadas
+As referências mostram também os extras da **evolução do projeto** (as xícaras desenhadas
 e as frações como "1 ½"). Sem eles, a página fica igual, só sem esses
 detalhes.
 
@@ -101,7 +101,9 @@ medida-certa/
 
 ## Regras
 
-1. **JavaScript puro.** Nenhuma biblioteca nem framework.
+1. **JavaScript puro.** O projeto existe para você praticar o DOM. Uma
+   biblioteca ou framework de interface (jQuery, React) faria esse trabalho
+   por você, por isso deixe-os de fora daqui.
 2. **Não edite o `index.html` nem o CSS.** Toda mudança na página vem do
    JavaScript.
 3. **Os dados vêm de `UNIDADES` e `INGREDIENTES`.** Não copie as listas para
@@ -113,38 +115,53 @@ medida-certa/
 6. **Sem `alert()`, `confirm()` ou `prompt()`.** Toda mensagem aparece na
    própria página.
 7. Você pode usar IA como tutora, com o prompt da unidade, para tirar dúvidas e
-   revisar o seu código. Não pode pedir para ela fazer o projeto. Na
-   apresentação, você vai explicar qualquer trecho que for apontado.
+   revisar o seu código. Não peça para ela fazer o projeto: você precisa
+   entender e saber explicar cada trecho do que entregar.
 
 ## O que você vai desenvolver
 
-**DOM**
+Ao concluir este projeto você terá praticado:
+
+**DOM: introdução e manipulação de elementos**
 - Selecionar elementos com `querySelector` e `querySelectorAll`
-- Criar elementos com `createElement` (`option`, `tr`, `td`, `strong`)
+- Criar elementos com `createElement` (`option`, `tr`, `td`, `strong`) e
+  adicionar na página com `append`
 - Preencher texto com `textContent` e limpar com `replaceChildren`
 - Mostrar e esconder com `hidden`, ligar e desligar classes e atributos
 
-**Eventos**
+**DOM: eventos e formulários**
 - `input` no campo, `change` nos selects e `click` nos atalhos
 - Ler `value` e `dataset`
+- Converter o texto do campo em número e tratar vírgula, vazio e `NaN`
 
-**Números**
-- Converter texto em número com `Number` e tratar vírgula, vazio e `NaN`
+**Arrays e funções de arrays (`map`, `filter`, `forEach`)**
+- `find` para achar a medida e o ingrediente escolhidos
+- `filter` para tirar a medida escolhida da tabela
+- `forEach` (ou `map`) para criar as opções e as linhas
+
+**Função anônima, callback e arrow functions**
+- Passar uma função para o `addEventListener` e para os métodos de array
+- Escrever essas funções com arrow function, quando ficar mais claro
+
+**Desestruturação de objetos**
+- Tirar do objeto só o que precisa: `const { nome, gramasPorXicara } = ingrediente`
+
+**Formatação**
 - Fazer a conta em duas etapas (medida → gramas → medida)
 - Formatar com `Intl.NumberFormat`
 
-**Arrays e objetos**
-- `find` para achar a medida e o ingrediente escolhidos
-- `filter` para tirar a medida escolhida da tabela
-- `forEach` para criar as opções e as linhas
-
 ---
 
-## Roteiro de estudo
+## Roteiro sugerido
 
-Siga as etapas na ordem. Faça um commit ao fim de cada uma.
+As etapas estão na ordem que facilita a construção do projeto, não na ordem
+das aulas. Cada uma mostra os **assuntos** que pratica: se algum ainda não foi
+visto em aula, use as fontes de consulta do fim deste arquivo. Faça um commit
+ao fim de cada etapa.
 
 ### Etapa 1 · Ponto de partida e selects
+
+*Assuntos: DOM: introdução e manipulação de elementos · forEach · callback*
 
 Crie `js/conversor.js`. Selecione os elementos da tabela de
 `docs/03-componentes.md` e guarde cada um em uma constante. Escreva
@@ -155,6 +172,8 @@ Crie `js/conversor.js`. Selecione os elementos da tabela de
 
 ### Etapa 2 · Ler a quantidade
 
+*Assuntos: DOM: eventos e formulários*
+
 Escreva uma função que lê o campo e devolve o número, ou `null` se não for
 válido. Teste no console com `2`, `0,5`, `0.5`, vazio, `abc`, `0` e `-2`
 antes de seguir. Leia a seção "Pegadinhas" de `docs/02-dados-e-calculos.md`.
@@ -163,16 +182,22 @@ antes de seguir. Leia a seção "Pegadinhas" de `docs/02-dados-e-calculos.md`.
 
 ### Etapa 3 · A conta e o resultado
 
+*Assuntos: Arrays · callback e arrow functions · Desestruturação · DOM: eventos*
+
 Escreva duas funções: uma que leva qualquer medida para gramas e outra que
 leva gramas para qualquer medida (a fórmula está em
-`docs/02-dados-e-calculos.md`). Monte a frase e o número em `#frase` e
-`#gramas`, com singular e plural. Escreva uma função `atualizar()` que faz
-tudo isso e chame-a ao abrir a página, no `input` do campo e no `change` dos
-selects.
+`docs/02-dados-e-calculos.md`). Para achar a medida e o ingrediente
+escolhidos, use `find` com uma arrow function, e desestruture o objeto
+encontrado para pegar só os campos que a conta usa. Monte a frase e o número
+em `#frase` e `#gramas`, com singular e plural. Escreva uma função
+`atualizar()` que faz tudo isso e chame-a ao abrir a página, no `input` do
+campo e no `change` dos selects.
 
-`find` · `Intl.NumberFormat` · `addEventListener` · `replaceChildren`
+`find` · `=>` · `const { ... } = objeto` · `Intl.NumberFormat` · `addEventListener` · `replaceChildren`
 
 ### Etapa 4 · A tabela e a conta
+
+*Assuntos: filter e forEach · DOM: manipulação de elementos*
 
 Dentro de `atualizar()`, limpe `#tabela-corpo` e crie uma `<tr>` para cada
 medida, menos a escolhida. Preencha também a conta do ingrediente. Confira com
@@ -181,6 +206,8 @@ a tabela de valores esperados.
 `filter` · `createElement('tr')` · `createElement('td')` · `classList`
 
 ### Etapa 5 · Atalhos, erro e acabamento
+
+*Assuntos: DOM: eventos e formulários*
 
 Faça os atalhos funcionarem e marcarem `aria-pressed`. Trate a quantidade
 inválida (aviso, classe `com-erro`, `aria-invalid` e esconder resultado e
@@ -192,9 +219,10 @@ entrega e publique no GitHub Pages.
 
 ---
 
-## Desafios extras (opcionais)
+## Evolução do projeto (opcional)
 
-Só depois que tudo da lista de entrega estiver funcionando.
+Depois que tudo da lista de entrega estiver funcionando, você pode continuar o
+projeto. Nada aqui é obrigatório.
 
 - **Frações de cozinha**: na tabela, `1,5` vira `1 ½` e `6,67` vira `6 ⅔`
   (modelo em `docs/03-componentes.md`).
@@ -221,18 +249,6 @@ Só depois que tudo da lista de entrega estiver funcionando.
 - [ ] Nenhum erro vermelho no console
 - [ ] O site está publicado no GitHub Pages
 
-## Critérios de avaliação
-
-| Critério | Peso |
-| --- | --- |
-| Conversão correta, com os valores esperados | 30% |
-| Leitura da quantidade e estado de erro | 20% |
-| Resultado e tabela gerados a partir dos dados | 25% |
-| Eventos e atalhos | 10% |
-| Organização: funções com nomes claros, sem repetição, regras respeitadas | 15% |
-
----
-
 ## Como fazer o fork
 
 **1. Faça o fork.** No topo desta página, clique em **Fork** e, na tela
@@ -256,12 +272,26 @@ git push
 
 **4. Publique.** No seu repositório, abra *Settings › Pages*, escolha a branch
 `main` e a pasta `/ (root)` e salve. Em um ou dois minutos, o link aparece no
-topo da mesma tela.
+topo da mesma tela. Coloque esse link na descrição do repositório (a
+engrenagem ao lado de *About*). O passo a passo, com imagens, está na
+[documentação do GitHub Pages](https://docs.github.com/pt/pages/getting-started-with-github-pages/creating-a-github-pages-site),
+em português.
 
 ---
 
-**Fontes de consulta:** [MDN: evento input](https://developer.mozilla.org/pt-BR/docs/Web/API/Element/input_event),
-[MDN: Number](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number),
-[MDN: Intl.NumberFormat](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat),
-[MDN: Element.replaceChildren](https://developer.mozilla.org/pt-BR/docs/Web/API/Element/replaceChildren),
-[MDN: HTMLElement.dataset](https://developer.mozilla.org/pt-BR/docs/Web/API/HTMLElement/dataset).
+## Fontes de consulta
+
+Em português, a não ser quando indicado.
+
+- [GitHub: criar fork de um repositório](https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+- [MDN: Introdução ao DOM](https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model/Introduction)
+- [MDN: evento input](https://developer.mozilla.org/pt-BR/docs/Web/API/Element/input_event)
+- [MDN: Array.prototype.find](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/find),
+  [filter](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) e
+  [forEach](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+- [MDN: Arrow functions](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- [MDN: Atribuição via desestruturação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [MDN: Number](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number)
+- [MDN: Intl.NumberFormat](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)
+- [MDN: Element.replaceChildren](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren) (em inglês)
+- [MDN: usando atributos data-*](https://developer.mozilla.org/pt-BR/docs/Learn/HTML/Howto/Use_data_attributes) (o que o `dataset` lê)
