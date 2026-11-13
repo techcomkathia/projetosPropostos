@@ -416,11 +416,3 @@ quando não existe:
 
 ---
 
-## Próximos passos
-
-- **Agente tutor do módulo**: um agente por módulo (não por unidade), em que o
-  aluno informa o projeto e o agente conduz a construção e o entendimento, sem
-  entregar o código, no nível da ementa e com base nos assuntos anteriores
-  (lógica com JS, HTML e CSS). As regras dos projetos já citam "o prompt da
-  unidade"; quando o agente existir, vale trocar essa expressão pelo nome e o
-  link dele nos sete READMEs.
