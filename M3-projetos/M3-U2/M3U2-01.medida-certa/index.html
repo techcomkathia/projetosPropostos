@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medida Certa · Conversor de medidas culinárias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="css/medida-certa.css">
+</head>
+<body>
+  <div class="pagina">
+
+    <!-- ===================================================== TOPO -->
+    <header class="topo">
+      <p class="sobretitulo">Conversor de medidas culinárias</p>
+      <h1 class="marca">Medida Certa</h1>
+      <p class="apoio">A receita pede xícara e você só tem balança? Escolha o ingrediente e veja a mesma quantidade em todas as medidas.</p>
+    </header>
+
+    <!-- ===================================================== CONVERSOR -->
+    <section class="prato" aria-label="Conversor">
+      <div class="prato__miolo">
+
+        <!-- O JavaScript cria as <option> dos dois selects a partir de UNIDADES e INGREDIENTES -->
+        <div class="pergunta">
+          <div class="campo" id="campo-quantidade">
+            <label for="quantidade">Quanto</label>
+            <input id="quantidade" type="text" inputmode="decimal" value="2" autocomplete="off" aria-describedby="erro">
+          </div>
+          <div class="campo">
+            <label for="unidade">Medida</label>
+            <select id="unidade"></select>
+          </div>
+          <span class="de" aria-hidden="true">de</span>
+          <div class="campo campo--ingrediente">
+            <label for="ingrediente">Ingrediente</label>
+            <select id="ingrediente"></select>
+          </div>
+        </div>
+
+        <!-- Atalhos: cada botão guarda o seu valor em data-valor -->
+        <div class="atalhos" role="group" aria-label="Quantidades rápidas">
+          <span class="atalhos__rotulo">Rápido:</span>
+          <button class="chip" type="button" data-valor="0.25">¼</button>
+          <button class="chip" type="button" data-valor="0.333">⅓</button>
+          <button class="chip" type="button" data-valor="0.5">½</button>
+          <button class="chip" type="button" data-valor="1">1</button>
+          <button class="chip" type="button" data-valor="2">2</button>
+          <button class="chip" type="button" data-valor="3">3</button>
+        </div>
+
+        <!-- Aparece só quando a quantidade não é válida -->
+        <p class="erro" id="erro" role="alert" hidden></p>
+
+        <!-- Resultado: o JavaScript preenche a frase e o número -->
+        <div class="resultado" id="resultado" aria-live="polite">
+          <p class="resultado__frase" id="frase"></p>
+          <p class="resultado__gramas" id="gramas"></p>
+          <!-- Desafio extra: xícaras desenhadas (veja docs/03-componentes.md) -->
+          <div class="xicaras" id="xicaras" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================== TABELA
+         O JavaScript cria uma <tr> para cada medida, menos a escolhida -->
+    <section class="secao" id="secao-tabela" aria-labelledby="titulo-tabela">
+      <h2 class="secao__titulo" id="titulo-tabela">Equivale a</h2>
+      <div class="tabela-rolagem">
+        <table class="tabela">
+          <thead>
+            <tr><th scope="col">Medida</th><th scope="col" class="numero">Quantidade</th></tr>
+          </thead>
+          <tbody id="tabela-corpo"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================================================== A CONTA -->
+    <section class="secao" aria-labelledby="titulo-conta">
+      <h2 class="secao__titulo" id="titulo-conta">Como a conta é feita</h2>
+      <dl class="conta">
+        <div><dt>1 xícara</dt><dd>240 ml</dd></div>
+        <div><dt>1 colher de sopa</dt><dd>15 ml</dd></div>
+        <div><dt>1 colher de chá</dt><dd>5 ml</dd></div>
+        <div class="conta__ingrediente">
+          <dt id="conta-ingrediente-nome"></dt>
+          <dd id="conta-ingrediente-gramas"></dd>
+        </div>
+      </dl>
+      <p class="nota">Valores aproximados, com o ingrediente solto e a medida nivelada (sem apertar e sem montinho). Tabelas de cozinha variam um pouco entre si.</p>
+    </section>
+
+  </div>
+
+  <!-- A ordem importa: primeiro os dados, depois o seu código.
+       O seu código começa aqui: crie a pasta js/ e o arquivo conversor.js -->
+  <script src="dados/medidas.js"></script>
+  <script src="js/conversor.js"></script>
+</body>
+</html>

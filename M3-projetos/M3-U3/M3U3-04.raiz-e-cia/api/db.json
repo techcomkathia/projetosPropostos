@@ -1,0 +1,168 @@
+{
+  "kits": [
+    {
+      "id": 1,
+      "nome": "Cozinha",
+      "descricao": "Manjericão, cebolinha, salsa e orégano.",
+      "especies": ["Manjericão", "Cebolinha", "Salsa", "Orégano"],
+      "sementes": 4,
+      "luz": "sol-pleno",
+      "rega": "Todo dia, de manhã",
+      "dificuldade": "facil",
+      "preco": 79,
+      "situacao": "disponivel",
+      "destaque": true,
+      "cuidados": "Os quatro gostam de sol direto por pelo menos cinco horas. O manjericão é o primeiro a pedir colheita: corte sempre acima de um par de folhas, nunca a planta inteira."
+    },
+    {
+      "id": 2,
+      "nome": "Salada",
+      "descricao": "Rúcula, alface crespa, mostarda e agrião.",
+      "especies": ["Rúcula", "Alface crespa", "Mostarda", "Agrião"],
+      "sementes": 4,
+      "luz": "meia-sombra",
+      "rega": "Todo dia, solo sempre úmido",
+      "dificuldade": "facil",
+      "preco": 89,
+      "situacao": "disponivel",
+      "destaque": true,
+      "cuidados": "Folhas preferem luz da manhã e sombra à tarde. A rúcula fica pronta em 30 dias; colha as folhas de fora e deixe o miolo crescer."
+    },
+    {
+      "id": 3,
+      "nome": "Varanda",
+      "descricao": "Capuchinha, amor-perfeito e calêndula, flores que se come.",
+      "especies": ["Capuchinha", "Amor-perfeito", "Calêndula"],
+      "sementes": 3,
+      "luz": "sol-pleno",
+      "rega": "Dia sim, dia não",
+      "dificuldade": "media",
+      "preco": 95,
+      "situacao": "disponivel",
+      "destaque": true,
+      "cuidados": "Flores comestíveis precisam de sol e de vaso com boa drenagem. Colha as flores abertas pela manhã, antes do sol forte."
+    },
+    {
+      "id": 4,
+      "nome": "Do jardineiro",
+      "descricao": "Seleção fechada aqui, com uma espécie rara por mês.",
+      "especies": ["Espécie surpresa do mês"],
+      "sementes": 6,
+      "luz": "sortido",
+      "rega": "Indicada no guia de cada caixa",
+      "dificuldade": "desafiadora",
+      "preco": 119,
+      "situacao": "lista-de-espera",
+      "destaque": false,
+      "cuidados": "Cada caixa traz um guia próprio, porque as espécies mudam todo mês. Para quem já plantou antes e quer ser surpreendido."
+    },
+    {
+      "id": 5,
+      "nome": "Chá",
+      "descricao": "Hortelã, camomila, erva-cidreira e capim-limão.",
+      "especies": ["Hortelã", "Camomila", "Erva-cidreira", "Capim-limão"],
+      "sementes": 4,
+      "luz": "meia-sombra",
+      "rega": "Todo dia, sem encharcar",
+      "dificuldade": "facil",
+      "preco": 85,
+      "situacao": "disponivel",
+      "destaque": false,
+      "cuidados": "A hortelã se espalha e toma conta do vaso: plante em um vaso só para ela. O capim-limão aguenta mais sol que os outros três."
+    },
+    {
+      "id": 6,
+      "nome": "Pimenta",
+      "descricao": "Dedo-de-moça, biquinho e malagueta.",
+      "especies": ["Dedo-de-moça", "Biquinho", "Malagueta"],
+      "sementes": 3,
+      "luz": "sol-pleno",
+      "rega": "Dia sim, dia não",
+      "dificuldade": "media",
+      "preco": 92,
+      "situacao": "sazonal",
+      "destaque": false,
+      "cuidados": "Pimenteiras precisam de calor para frutificar, por isso o kit só sai na primavera. Do plantio à primeira pimenta são cerca de 90 dias."
+    },
+    {
+      "id": 7,
+      "nome": "Raízes",
+      "descricao": "Rabanete, cenoura baby e beterraba.",
+      "especies": ["Rabanete", "Cenoura baby", "Beterraba"],
+      "sementes": 3,
+      "luz": "sol-pleno",
+      "rega": "Todo dia, solo fofo",
+      "dificuldade": "media",
+      "preco": 99,
+      "situacao": "disponivel",
+      "destaque": false,
+      "cuidados": "Raízes pedem vaso fundo, de pelo menos 25 cm. O rabanete é o mais rápido: em quatro semanas já dá para colher."
+    },
+    {
+      "id": 8,
+      "nome": "Apartamento",
+      "descricao": "Microverdes de girassol, ervilha, rúcula e mostarda.",
+      "especies": ["Girassol", "Ervilha", "Rúcula", "Mostarda"],
+      "sementes": 4,
+      "luz": "meia-sombra",
+      "rega": "Borrifar duas vezes por dia",
+      "dificuldade": "facil",
+      "preco": 75,
+      "situacao": "disponivel",
+      "destaque": false,
+      "cuidados": "Microverdes crescem em uma bandeja rasa, perto da janela, e ficam prontos em 10 dias. Corte com tesoura logo acima da terra."
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Maria Andrade",
+      "email": "maria@email.com",
+      "senha": "horta123"
+    },
+    {
+      "id": 2,
+      "nome": "João Pereira",
+      "email": "joao@email.com",
+      "senha": "semente123"
+    }
+  ],
+  "assinaturas": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "kitId": 1,
+      "frequencia": "mensal",
+      "local": "janela",
+      "cep": "01310200",
+      "rua": "Avenida Paulista",
+      "numero": "1578",
+      "complemento": "apto 42",
+      "bairro": "Bela Vista",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "observacao": "A portaria recebe até as 18h",
+      "calendario": true,
+      "status": "ativa",
+      "criadaEm": "2026-08-03T14:20:00.000Z"
+    },
+    {
+      "id": 2,
+      "usuarioId": 1,
+      "kitId": 5,
+      "frequencia": "bimestral",
+      "local": "varanda",
+      "cep": "01310200",
+      "rua": "Avenida Paulista",
+      "numero": "1578",
+      "complemento": "apto 42",
+      "bairro": "Bela Vista",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "observacao": "",
+      "calendario": false,
+      "status": "pausada",
+      "criadaEm": "2026-09-12T10:05:00.000Z"
+    }
+  ]
+}
