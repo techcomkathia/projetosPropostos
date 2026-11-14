@@ -80,6 +80,7 @@ raiz-e-cia-assinante/
 │   ├── index.html ................. todos os componentes do estilo, nos três temas
 │   └── img/ ....................... imagens usadas só na vitrine
 ├── comportamento-interativo.md .... como cada tela deve reagir
+├── TUTOR-M3.md .................... prompt do tutor de IA do módulo (veja "Regras")
 └── README.md ...................... este arquivo
 ```
 
@@ -130,7 +131,8 @@ O projeto usa o tema **Raiz** (`data-tema="raiz"`).
 8. **Nenhuma manipulação direta do DOM** (`document.querySelector`,
    `innerHTML`) dentro dos componentes. No React, a tela é consequência do
    estado.
-9. Você pode usar IA como tutora, com o prompt da unidade, para tirar dúvidas e
+9. Você pode usar IA como tutora, com o prompt do tutor do módulo
+   (`TUTOR-M3.md`, nesta pasta), para tirar dúvidas e
    revisar o seu código. Não peça para ela fazer o projeto: você precisa
    entender e saber explicar cada trecho do que entregar.
 

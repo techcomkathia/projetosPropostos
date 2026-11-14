@@ -131,6 +131,7 @@ nexo-literario/
 │   └── 04-dados-e-calculos.md ..... meses, trimestres, preços, notas e pagamento
 ├── referencias/ ................... imagens de referência das telas
 ├── comportamento-interativo.md .... como cada tela deve reagir
+├── TUTOR-M3.md .................... prompt do tutor de IA do módulo (veja "Regras")
 └── README.md ...................... este arquivo
 ```
 
@@ -182,7 +183,8 @@ na última etapa, você gera o build e confere com o `npm run preview`.
     própria página.
 11. **Os dados do cartão nunca vão para a API.** Número, nome impresso,
     validade e CVV só existem no formulário (veja `docs/02-guia-da-api.md`).
-12. Você pode usar IA como tutora, com o prompt da unidade, para tirar dúvidas
+12. Você pode usar IA como tutora, com o prompt do tutor do módulo
+    (`TUTOR-M3.md`, nesta pasta), para tirar dúvidas
     e revisar o seu código. Não peça para ela fazer o projeto: você precisa
     entender e saber explicar cada trecho do que entregar.
 
