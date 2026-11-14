@@ -1,5 +1,7 @@
 # Horizonte · Acervo
 
+![Resultado final: o Horizonte Acervo pronto, no computador e no celular](capa.png)
+
 Projeto desafio individual da unidade **Frontend dinâmico com JavaScript**
 (M3U2). Você vai transformar uma página estática em uma aplicação que busca
 obras de arte em uma API pública, mostra os detalhes de cada uma, guarda as
@@ -7,7 +9,7 @@ favoritas no navegador e valida um formulário de inscrição.
 
 O HTML e o CSS já vêm prontos. **O projeto inteiro é JavaScript.**
 
-![Resultado esperado](referencia-desktop.png)
+![Resultado esperado em tela larga](referencias/referencia-desktop.png)
 
 ---
 
@@ -81,9 +83,11 @@ horizonte-acervo/
 │   └── img/ ....................... imagens usadas só na vitrine
 ├── index.html ..................... página estática pronta
 ├── comportamento-interativo.md .... como a página deve reagir a cada ação
-├── referencia-desktop.png ......... resultado esperado em tela larga
-├── referencia-mobile.png .......... resultado esperado no celular
+├── referencias/
+│   ├── referencia-desktop.png ..... resultado esperado em tela larga
+│   └── referencia-mobile.png ...... resultado esperado no celular
 ├── TUTOR-M3.md .................... prompt do tutor de IA do módulo (veja "Regras")
+├── capa.png ....................... resultado final, no computador e no celular
 └── README.md ...................... este arquivo
 ```
 

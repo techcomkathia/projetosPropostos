@@ -1,5 +1,7 @@
 # Jogo de Dados · Seu primeiro projeto em React
 
+![Resultado final: o Jogo de Dados pronto, no computador e no celular](referencias/capa.png)
+
 Atividade individual da unidade **ReactJS** (M3U3), para quem está começando
 no React. Você vai construir um jogo bem simples: **três dados na tela e a
 soma deles**. A cada clique no botão, os três dados são rolados de novo e a
@@ -66,6 +68,7 @@ jogo-de-dados/
 │   ├── 01-entendendo-o-react.md ... componentes, props, useState e Math.random, com exemplos
 │   └── 02-componentes.md .......... os componentes do jogo e a marcação de cada um
 ├── referencias/
+│   ├── capa.png ................... resultado final, no computador e no celular
 │   ├── 01-inicio.png .............. ao abrir
 │   ├── 02-depois-de-rolar.png ..... depois de algumas rolagens
 │   ├── 03-celular.png ............. no celular

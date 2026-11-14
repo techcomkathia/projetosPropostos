@@ -1,5 +1,7 @@
 # Nexo Literário · Programação e planos
 
+![Resultado final: o Nexo Literário pronto, no computador e no celular](referencias/capa.png)
+
 Atividade individual da unidade **Frontend dinâmico com JavaScript** (M3U2).
 Você vai transformar listas de dados em interface: a programação de livros de
 um clube de leitura vira um carrossel por trimestre e uma linha do tempo, e os
@@ -89,6 +91,7 @@ nexo-literario/
 │   ├── 03-componentes.md .......... HTML dos pedaços que o seu JS vai criar
 │   └── 04-guia-dos-dados.md ....... como os dados chegam à página e como testar
 ├── referencias/
+│   ├── capa.png ................... resultado final, no computador e no celular
 │   ├── 01-inicio.png .............. Home esperada em tela larga
 │   ├── 02-planos.png .............. Planos esperada em tela larga
 │   ├── 03-inicio-celular.png ...... Home esperada no celular

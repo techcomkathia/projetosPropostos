@@ -1,5 +1,7 @@
 # Lista de Tarefas · Formulários no React
 
+![Resultado final: a Lista de Tarefas pronta, no computador e no celular](referencias/capa.png)
+
 Atividade individual da unidade **ReactJS** (M3U3), para praticar
 **formulários e eventos**. Você vai construir uma lista de tarefas: um
 formulário para criar a tarefa (descrição, categoria, prazo e se ela é
@@ -82,6 +84,7 @@ lista-de-tarefas/
 │   ├── 01-entendendo-formularios.md ... campos controlados, submit, validação e listas no estado
 │   └── 02-componentes.md .............. os componentes, as props e a marcação de cada um
 ├── referencias/
+│   ├── capa.png ....................... resultado final, no computador e no celular
 │   ├── 01-lista-vazia.png ............. ao abrir
 │   ├── 02-com-tarefas.png ............. com tarefas, prioritárias no topo
 │   ├── 03-erros.png ................... o formulário com erros
