@@ -1,5 +1,7 @@
 # Medida Certa · Conversor de medidas culinárias
 
+![Resultado final: o Medida Certa pronto, no computador e no celular](referencias/capa.png)
+
 Atividade individual da unidade **Frontend dinâmico com JavaScript** (M3U2).
 Você vai fazer um conversor de medidas de cozinha: a pessoa escolhe o
 ingrediente, diz quanto tem, e a página mostra o mesmo tanto em xícaras,
@@ -73,6 +75,7 @@ medida-certa/
 │   ├── 02-dados-e-calculos.md ..... formato dos dados, a conta, valores esperados e pegadinhas
 │   └── 03-componentes.md .......... os elementos da página e o HTML que o JS cria
 ├── referencias/
+│   ├── capa.png ................... resultado final, no computador e no celular
 │   ├── 01-inicio.png .............. ao abrir
 │   ├── 02-de-gramas.png ........... partindo de gramas
 │   ├── 03-erro.png ................ quantidade inválida

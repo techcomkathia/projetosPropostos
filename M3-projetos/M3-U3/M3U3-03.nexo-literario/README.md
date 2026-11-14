@@ -1,5 +1,7 @@
 # Nexo Literário · O site completo em React
 
+![Resultado final: o Nexo Literário em React pronto, no computador e no celular](referencias/capa.png)
+
 Projeto individual da unidade **ReactJS** (M3U3). Na M3U2 você montou a Home
 e os Planos do Nexo Literário com JavaScript puro. Agora o clube quer o **site
 completo**: a programação do ano, a página de cada livro, o histórico de

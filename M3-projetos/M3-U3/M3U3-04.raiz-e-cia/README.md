@@ -1,5 +1,7 @@
 # Raiz & Cia · Área do assinante
 
+![Resultado final: a área do assinante da Raiz & Cia pronta, no computador e no celular](capa.png)
+
 Projeto final individual da unidade **ReactJS** (M3U3). Você vai construir em
 React a aplicação de assinatura da Raiz & Cia: catálogo de kits, página de
 cada kit, cadastro, login, formulário de assinatura com busca de endereço pelo
@@ -81,6 +83,7 @@ raiz-e-cia-assinante/
 │   └── img/ ....................... imagens usadas só na vitrine
 ├── comportamento-interativo.md .... como cada tela deve reagir
 ├── TUTOR-M3.md .................... prompt do tutor de IA do módulo (veja "Regras")
+├── capa.png ....................... resultado final, no computador e no celular
 └── README.md ...................... este arquivo
 ```
 
