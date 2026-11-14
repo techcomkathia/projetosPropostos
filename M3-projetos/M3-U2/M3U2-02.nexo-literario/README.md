@@ -96,6 +96,7 @@ nexo-literario/
 ├── index.html ..................... Home (pronta, sem os dados)
 ├── planos.html .................... Planos (pronta, sem os dados)
 ├── comportamento-interativo.md .... como cada página deve reagir
+├── TUTOR-M3.md .................... prompt do tutor de IA do módulo (veja "Regras")
 └── README.md ...................... este arquivo
 ```
 
@@ -138,7 +139,8 @@ e os dados já trazem o link de cada uma.
    e o `hidden`.
 6. **Sem `alert()`, `confirm()` ou `prompt()`.** Toda mensagem aparece na
    própria página.
-7. Você pode usar IA como tutora, com o prompt da unidade, para tirar dúvidas e
+7. Você pode usar IA como tutora, com o prompt do tutor do módulo
+   (`TUTOR-M3.md`, nesta pasta), para tirar dúvidas e
    revisar o seu código. Não peça para ela fazer o projeto: você precisa
    entender e saber explicar cada trecho do que entregar.
 
@@ -146,7 +148,7 @@ e os dados já trazem o link de cada uma.
 
 Ao concluir este projeto você terá praticado:
 
-**DOM: manipulação de elementos (selecionar, criar e adicionar)**
+**DOM: manipulação de elementos (selecionar, criar, adicionar e remover)**
 - Selecionar elementos e criar elementos com `createElement`
 - Preencher texto com `textContent` e atributos com `src`, `alt`, `setAttribute`
 - Mostrar e esconder com `hidden`

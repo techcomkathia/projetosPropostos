@@ -83,6 +83,7 @@ horizonte-acervo/
 ├── comportamento-interativo.md .... como a página deve reagir a cada ação
 ├── referencia-desktop.png ......... resultado esperado em tela larga
 ├── referencia-mobile.png .......... resultado esperado no celular
+├── TUTOR-M3.md .................... prompt do tutor de IA do módulo (veja "Regras")
 └── README.md ...................... este arquivo
 ```
 
@@ -128,7 +129,8 @@ estados) está em `css/README.md`.
 7. **Toda chamada à API trata os erros.** Na versão final, com `async`/`await`
    e `try`/`catch`, conferindo o `response.ok`. A Etapa 2 começa com `.then` e
    `.catch` de propósito, para você ver as duas formas.
-8. Você pode usar IA como tutora, com o prompt da unidade, para tirar dúvidas e
+8. Você pode usar IA como tutora, com o prompt do tutor do módulo
+   (`TUTOR-M3.md`, nesta pasta), para tirar dúvidas e
    revisar o seu código. Não peça para ela fazer o projeto: você precisa
    entender e saber explicar cada trecho do que entregar.
 

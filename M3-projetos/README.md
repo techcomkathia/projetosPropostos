@@ -416,11 +416,29 @@ quando não existe:
 
 ---
 
-## Próximos passos
+## Tutor de IA do módulo
 
-- **Agente tutor do módulo**: um agente por módulo (não por unidade), em que o
-  aluno informa o projeto e o agente conduz a construção e o entendimento, sem
-  entregar o código, no nível da ementa e com base nos assuntos anteriores
-  (lógica com JS, HTML e CSS). As regras dos projetos já citam "o prompt da
-  unidade"; quando o agente existir, vale trocar essa expressão pelo nome e o
-  link dele nos sete READMEs.
+`TUTOR-M3.md` é um prompt que transforma qualquer IA de conversa (ChatGPT,
+Claude, Gemini e outras) em um tutor dos projetos do módulo. O aluno copia o
+bloco, cola numa conversa nova, e o tutor:
+
+1. explica como funciona: não entrega o código do projeto, usa uma escada de
+   ajuda (pergunta → conceito → exemplo em outro contexto → esqueleto com
+   lacunas) e aceita comandos como `/dica`, `/revisa`, `/erro` e `/resumo`;
+2. pergunta o projeto, em que ponto o aluno está e uma autoavaliação de 0 a 3
+   dos assuntos daquele projeto e da base anterior, para achar as lacunas;
+3. pede os documentos do projeto (arquivo, texto colado ou link do
+   repositório), começando pelo README e pelo `comportamento-interativo.md`;
+4. propõe um plano e conduz a construção pelo roteiro do README, um passo de
+   cada vez, usando as armadilhas de cada projeto como perguntas.
+
+O prompt já traz a ementa do M3, a base anterior (HTML e CSS, bibliotecas de
+CSS, lógica com JavaScript), as regras comuns e um resumo de cada projeto com
+os documentos para pedir e as armadilhas. No topo, há a parte **"Meus
+ajustes"**, que o aluno preenche (nome, explicações curtas ou detalhadas,
+ritmo, exercícios, termos técnicos, observações).
+
+**Cópias:** o arquivo principal fica em `M3-projetos/TUTOR-M3.md`, e cada pasta
+de projeto tem uma cópia idêntica, porque cada uma vira um repositório
+separado. As regras dos sete READMEs apontam para essa cópia. Se o prompt
+mudar, altere o principal e copie para as sete pastas.

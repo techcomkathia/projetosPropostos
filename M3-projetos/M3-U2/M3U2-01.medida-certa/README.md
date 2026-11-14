@@ -80,6 +80,7 @@ medida-certa/
 │   └── 05-escuro.png .............. com o sistema no modo escuro
 ├── index.html ..................... a página (pronta, sem os dados)
 ├── comportamento-interativo.md .... como a página deve reagir
+├── TUTOR-M3.md .................... prompt do tutor de IA do módulo (veja "Regras")
 └── README.md ...................... este arquivo
 ```
 
@@ -114,7 +115,8 @@ medida-certa/
    desliga `hidden`, classes e atributos.
 6. **Sem `alert()`, `confirm()` ou `prompt()`.** Toda mensagem aparece na
    própria página.
-7. Você pode usar IA como tutora, com o prompt da unidade, para tirar dúvidas e
+7. Você pode usar IA como tutora, com o prompt do tutor do módulo
+   (`TUTOR-M3.md`, nesta pasta), para tirar dúvidas e
    revisar o seu código. Não peça para ela fazer o projeto: você precisa
    entender e saber explicar cada trecho do que entregar.
 

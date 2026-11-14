@@ -71,6 +71,7 @@ jogo-de-dados/
 │   ├── 03-celular.png ............. no celular
 │   └── 04-desafio-trinca.png ...... com o desafio extra da trinca
 ├── comportamento-interativo.md .... como o jogo deve reagir
+├── TUTOR-M3.md .................... prompt do tutor de IA do módulo (veja "Regras")
 └── README.md ...................... este arquivo
 ```
 
@@ -112,7 +113,8 @@ src/
    `docs/02-componentes.md`.
 9. **Nenhuma manipulação direta do DOM** (`document.querySelector`,
    `innerHTML`, `addEventListener`). No React, a tela é consequência do estado.
-10. Você pode usar IA como tutora, com o prompt da unidade, para tirar dúvidas
+10. Você pode usar IA como tutora, com o prompt do tutor do módulo
+    (`TUTOR-M3.md`, nesta pasta), para tirar dúvidas
     e revisar o seu código. Não peça para ela fazer o projeto: você precisa
     entender e saber explicar cada trecho do que entregar.
 

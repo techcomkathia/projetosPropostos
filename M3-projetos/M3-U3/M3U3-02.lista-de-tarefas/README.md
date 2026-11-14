@@ -87,6 +87,7 @@ lista-de-tarefas/
 │   ├── 03-erros.png ................... o formulário com erros
 │   └── 04-celular.png ................. no celular
 ├── comportamento-interativo.md ........ como a aplicação deve reagir
+├── TUTOR-M3.md ........................ prompt do tutor de IA do módulo (veja "Regras")
 └── README.md .......................... este arquivo
 ```
 
@@ -132,7 +133,8 @@ src/
    `docs/02-componentes.md`.
 9. **Nenhuma manipulação direta do DOM** (`document.querySelector`,
    `innerHTML`, `.value =`). Nada de `alert()` ou `confirm()`.
-10. Você pode usar IA como tutora, com o prompt da unidade, para tirar dúvidas
+10. Você pode usar IA como tutora, com o prompt do tutor do módulo
+    (`TUTOR-M3.md`, nesta pasta), para tirar dúvidas
     e revisar o seu código. Não peça para ela fazer o projeto: você precisa
     entender e saber explicar cada trecho do que entregar.
 
